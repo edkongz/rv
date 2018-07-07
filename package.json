@@ -1,0 +1,23 @@
+{
+  "name": "rv",
+  "version": "1.0.0",
+  "description": "A functional validation library written with ramda (all hail ramda 🙌). Heavily inspired by Joi with the following features:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://kongdigital@github.com/kongdigital/rv.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/kongdigital/rv/issues"
+  },
+  "homepage": "https://github.com/kongdigital/rv#readme",
+  "dependencies": {
+    "ramda": "^0.25.0"
+  }
+}
