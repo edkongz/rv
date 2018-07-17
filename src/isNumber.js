@@ -1,4 +1,4 @@
-import { NOTINITIALIZED } from 'dns';
+import { Recoverable } from 'repl';
 
 const hasConstructor = (type, value) => value.constructor == type;
 

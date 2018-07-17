@@ -1,5 +1,5 @@
 {
-  "name": "rv",
+  "name": "rommel",
   "version": "1.0.0",
   "description": "A functional validation library written with ramda (all hail ramda 🙌). Heavily inspired by Joi with the following features:",
   "main": "index.js",

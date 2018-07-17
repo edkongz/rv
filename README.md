@@ -1,10 +1,9 @@
-# RV🚙
+# Rommel 🦊
 
-A functional validation library written with ramda (all hail ramda 🙌). Heavily inspired by Joi with the following features:
+A validation library written with ramda (all hail ramda 🙌). Heavily inspired by Joi, Yup with the following features:
 
 - Functional all the way
 - Reusable and composable
-- Small footprint
 - Descriptive and declarative
 
 ```javascript
@@ -85,6 +84,8 @@ isBoolean()
 ```
 
 ```
+matches()
+
 is
 not
 has
@@ -92,19 +93,14 @@ reject
 allow
 should
 
+hasShape()
+hasItems()
+
 isNil()
+notNil()
 rejectNil()
 allowNil()
 
-isEmpty()
-rejectEmpty()
-allowEmpty()
-
-isNull()
-rejectNull()
-allowNull()
-
-isUndefined()
-rejectUndefined() -> isRequired()
-allowUndefined() -> isOptional()
+isOptional()
+allowUndefined()
 ```
