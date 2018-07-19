@@ -1,3 +1,3 @@
 import * as R from 'ramda';
 
-export default R.gt;
+export default R.identity;

@@ -1,4 +1,4 @@
-import complement from 'ramda/es/complement';
-import isDivisibleBy from './isDivisibleBy';
+import * as R from 'ramda';
+import _isDivisibleBy from './internal/_isDivisibleBy';
 
-export default complement(isDivisibleBy(2));
+export default R.complement(_isDivisibleBy(2));

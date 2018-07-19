@@ -1,4 +1,4 @@
-import uniq from 'ramda/es/uniq';
-import hasSameLength from './internal/hasSameLength';
+import * as R from 'ramda';
+import _hasSameLength from './internal/_hasSameLength';
 
-export default list => hasSameLength(uniq(list), list);
+export default list => _hasSameLength(R.uniq(list), list);

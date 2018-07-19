@@ -7,8 +7,6 @@ A validation library written with ramda (all hail ramda 🙌). Heavily inspired 
 - Descriptive and declarative
 
 ```javascript
-import {schema} from "rv";
-
 schema([
   	description(),
   	label(),

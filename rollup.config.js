@@ -1,4 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
+import { uglify } from 'rollup-plugin-uglify';
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 export default {
   input: 'src/isObject.js',
@@ -7,9 +10,5 @@ export default {
     format: 'umd',
     name: 'rv',
   },
-  plugins: [
-    resolve({
-      module: true,
-    }),
-  ],
+  plugins: [resolve({ module: true }), isProduction && uglify()],
 };

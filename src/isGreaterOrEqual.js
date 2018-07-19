@@ -1,3 +1,3 @@
-import gte from 'ramda/es/gte';
+import * as R from 'ramda';
 
-export default gte;
+export default R.gte;
