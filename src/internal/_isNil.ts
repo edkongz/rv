@@ -1,3 +1,3 @@
 import * as R from 'ramda';
 
-export default R.type;
+export default R.isNil;
