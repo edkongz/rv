@@ -11,6 +11,8 @@ import _adjustWhen from '../internal/_adjustWhen';
 import _isDivisibleBy from '../internal/_isDivisibleBy';
 import _mapDigits from '../internal/_mapDigits';
 
+// Adds the invidiual digits together from a number
+// For example 123 = 1 + 2 + 3 = 6;
 const _addDigits = R.pipe(
   R.toString,
   _mapDigits,

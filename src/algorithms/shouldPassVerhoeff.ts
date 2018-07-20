@@ -1,4 +1,5 @@
 import * as R from 'ramda';
+import _mapDigits from '../internal/_mapDigits';
 /*################################################################
   Verhoeff algorithm
 
@@ -18,6 +19,7 @@ const d = [
   [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
 ];
 
+// FIXME this isn't being used for some reason
 const inv = [0, 4, 3, 2, 1, 5, 6, 7, 8, 9];
 
 const p = [
@@ -32,13 +34,10 @@ const p = [
 ];
 
 /*---------------------------------------------------------------
-  Validate
+  Export
   ---------------------------------------------------------------*/
-const input = '2363';
-
 export default R.pipe(
-  R.split(''),
-  R.map(Number),
+  _mapDigits,
   R.reverse,
   R.reduce((check, value, index) => d[check][p[index % 8][value]], 0),
   R.equals(0),

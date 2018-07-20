@@ -1,3 +1,3 @@
 import * as R from 'ramda';
 
-export default R.equals(null);
+export default () => ({ allowNull: true });

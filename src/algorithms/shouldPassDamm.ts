@@ -1,10 +1,10 @@
 import * as R from 'ramda';
+import _mapDigits from '../internal/_mapDigits';
 /*################################################################
   Damm algorithm
 
   https://en.wikipedia.org/wiki/Damm_algorithm
   ################################################################*/
-
 const table = [
   [0, 3, 1, 7, 5, 9, 8, 6, 4, 2],
   [7, 0, 9, 2, 1, 5, 4, 8, 6, 3],
@@ -19,7 +19,6 @@ const table = [
 ];
 
 export default R.pipe(
-  R.split(''),
-  R.map(Number),
+  _mapDigits,
   R.reduce((check, value) => table[check][value], 0),
 );
