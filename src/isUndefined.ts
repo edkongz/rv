@@ -1,3 +1,3 @@
-import * as R from 'ramda';
+import _isUndefined from './internal/_isUndefined';
 
-export default R.equals(undefined);
+export default _isUndefined;

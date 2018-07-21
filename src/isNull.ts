@@ -1,3 +1,3 @@
-import * as R from 'ramda';
+import _isNull from './internal/_isNull';
 
-export default () => ({ allowNull: true });
+export default _isNull;
