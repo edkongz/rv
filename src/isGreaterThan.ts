@@ -1,3 +1,5 @@
-import * as R from 'ramda';
-
-export default R.gt;
+import { TYPES } from './internal/_definitions';
+export default test => ({
+  forType: TYPES.NUMBER,
+  rules: value => value > test,
+});

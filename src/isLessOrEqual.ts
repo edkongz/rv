@@ -1,3 +1,3 @@
-import * as R from 'ramda';
-
-export default R.lte;
+export default test => ({
+  rules: value => value <= test,
+});

@@ -1,3 +1,3 @@
-import allowUndefined from './allowUndefined';
+import rejectUndefined from './rejectUndefined';
 
-export default allowUndefined;
+export default rejectUndefined;
