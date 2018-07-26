@@ -5,6 +5,7 @@ import _isUndefined from './internal/_isUndefined';
 import { TYPES } from './internal/_definitions';
 import _buildSpec from './internal/_buildSpec';
 import _isEmpty from './internal/_isEmpty';
+import _castNumber from './internal/_castNumber';
 
 const numberSpec = _buildSpec({
   type: TYPES.NUMBER,
@@ -14,31 +15,21 @@ const numberSpec = _buildSpec({
   rules: [],
 });
 
-const cast = value => {
-  switch (_isType(value)) {
-    case TYPES.NUMBER:
-      return value;
-    case TYPES.STRING:
-      return _isEmpty(value) ? NaN : +value;
-    default:
-      return NaN;
-  }
-};
-
 /*################################################################
+  
   ################################################################*/
-export const isNumber = (...factoryRules) => {
+export const isNumber = (...factoryRules:any[]) => {
   const factorySpec = numberSpec(factoryRules);
-  return (value, ...instanceRules) => {
+  return (value, ...instanceRules:any[]) => {
     const instanceSpec = _buildSpec(factorySpec, ...R.flatten(instanceRules));
 
     if (_isNull(value)) return instanceSpec.allowNull;
     if (_isUndefined(value)) return instanceSpec.allowUndefined;
 
     // CAST
-    if (instanceSpec.shouldCast) value = cast(value);
+    if (instanceSpec.shouldCast) value = _castNumber(value);
     if (isNaN(value)) return false;
 
-    R.allPas(instanceSpec.rules)(value);
+    R.allPass(instanceSpec.rules)(value);
   };
 };

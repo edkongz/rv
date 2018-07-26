@@ -19,6 +19,7 @@
   "homepage": "https://github.com/kongdigital/rv#readme",
   "dependencies": {},
   "devDependencies": {
+    "@types/ramda": "^0.25.35",
     "ramda": "^0.25.0",
     "rollup": "^0.62.0",
     "rollup-plugin-node-resolve": "^3.3.0",

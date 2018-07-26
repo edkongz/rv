@@ -5,7 +5,7 @@ test('Numbers: invalid input', t => {
     [null, 'null'],
     [undefined, 'undefined'],
     [NaN, 'NaN'],
-    [('', 'empty string')],
+    ['', 'empty string'],
     [' ', 'space only'],
     ['\t\r\n', 'whitespace characters only'],
     ['abc', 'alpha strings'],
