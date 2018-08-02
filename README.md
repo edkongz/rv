@@ -1,10 +1,21 @@
 # Rommel 🦊
 
-A validation library written with ramda (all hail ramda 🙌). Heavily inspired by Joi, Yup with the following features:
+A validation library with the following philosophy:
+
+* functional 
+* reusable
+* comoposable
+* declarative
+
+Heavily inspired by Joi and yup this is a new validation library. With the only dependency is `Ramda` (all hail Ramda 🙌). Rommel is nothing more than a series of functions. They all have sensible defaults and should require minimal setup. Because everything function is pure tree shaking should ensure the resulting package is small.
+
+Named after Erwin Rommel the "desert fox". 
+
+<!-- A validation library written with ramda (all hail ramda 🙌). Heavily inspired by Joi, Yup with the following features:
 
 - Functional all the way
 - Reusable and composable
-- Descriptive and declarative
+- Descriptive and declarative -->
 
 ```javascript
 schema([

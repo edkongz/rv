@@ -1,6 +1,6 @@
 ## `isNumber()`
 
-* `defaultsTo(value)`
+* `defaultsTo(value)` 
 * `isRequired()`
 * `isOptional()`
 * `allowUndefined()`
@@ -25,7 +25,6 @@
 * `isFloatingPoint()`
 * `isDecimal()`
 
-
 ## `isString()`
 * `defaultsTo(value)`
 * `matches(re: Regex)`
@@ -41,15 +40,9 @@
 * `rejectEmpty()`
 * `isOneOf()`
 * `notOneOf()`
-* `isEmail()`
-* `isIPv4()`
-* `isIPv6()`
-* `isCreditCard()`
-* `isVIN()`
-* `isABN()`
 * `hasMinLength(min)`
 * `hasMaxLength(max)`
-* `hasLengthBetween(min, max)
+* `hasLengthBetween(min, max)`
 * `hasNumbersOnly()`
 * `hasNumbers()`
 * `hasAlphaOnly()`
@@ -97,11 +90,39 @@
 * `hasItemsOf()`
 * `hasMinLength(min)`
 * `hasMaxLength(max)`
-* `hasLengthBetween(min, max)
+* `hasLengthBetween(min, max)`
+
+## `isBoolean()`
+
+* `defaultsTo(value)`
+* `isRequired()`
+* `isOptional()`
+* `allowUndefined()`
+* `rejectUndefined()`
+* `allowNull()`
+* `rejectNull()`
+* `allowNil()`
+* `rejectNil()`
+* `isTrue()`
+* `isTruthy()`
+* `isFalse()`
+* `isFalsy()`
+
+## `isNull()`
+
+## `isUndefined()`
 
 ## `isTypeOf()`
 
-```javascript
-isObject(allowKnownKeysOnly())
-```
+## Extras
+
+*. `isPassword()`
+* `isEmail()`
+* `isIPv4()`
+* `isIPv6()`
+* `isCreditCard()`
+* `isVIN()`
+* `isABN()`
+
+kj
 
