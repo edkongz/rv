@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import * as R from '../../node_modules/@types/ramda/index';
 import _mapDigits from '../internal/_mapDigits';
 /*################################################################
   Damm algorithm

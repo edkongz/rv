@@ -1,4 +1,4 @@
-import * as R from 'ramdaa';
+import * as R from '../../node_modules/@types/ramda/index';
 
 /*################################################################
   Vehicle Identification Number
@@ -39,12 +39,14 @@ const table = {
   ---------------------------------------------------------------*/
 const _transformValue = value => R.propOr(Number(value), value, table);
 const _getCheckDigit = R.nth(8);
+const _modulo = R.flip(R.modulo);
 const _calcCheckDigit = R.pipe(
   R.split(''),
   R.map(_transformValue),
   R.zipWith(R.multiply, weights),
-  R.sum,
-  R.modulo(R.__, 11),
+  R.sum as any,
+  // R.modulo(R.__, 11) as any,
+  _modulo(11),
   R.ifElse(R.equals(10), R.always('X'), R.toString),
 );
 

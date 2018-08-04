@@ -1,9 +1,9 @@
-import * as R from 'ramda';
+import * as R from '../node_modules/@types/ramda/index';
 import _isType from './internal/_isType';
 import _isNull from './internal/_isNull';
 import _isUndefined from './internal/_isUndefined';
 import { TYPES } from './internal/_definitions';
-import _buildSpec from './internal/_buildSpec';
+import _buildSpec from './internal/_buildSchema';
 import _isEmpty from './internal/_isEmpty';
 import _castNumber from './internal/_castNumber';
 
@@ -33,3 +33,6 @@ export const isNumber = (...factoryRules:any[]) => {
     R.allPass(instanceSpec.rules)(value);
   };
 };
+
+
+export default () => ({isValid: false})

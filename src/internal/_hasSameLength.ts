@@ -1,3 +1,3 @@
-import * as R from 'ramda';
+import * as R from '../../node_modules/@types/ramda/index';
 
-export default R.curry((a, b) => a.length === b.length);
+export default R.curry((a:any[], b:any[]) => a.length === b.length);

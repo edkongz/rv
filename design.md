@@ -1,3 +1,18 @@
+
+```
+allowNull();
+disallowNull()
+rejectNull();
+
+```
+
+If the arguments are objects with `isRommel` then it will compile a new schema. 
+If the arguements supplied are not rommel spec then it is validated
+```
+isNull(); // -> (value) => results;
+isNull(value); // -> rseults;
+``` 
+
 ## `isNumber()`
 
 * `defaultsTo(value)` 
@@ -11,7 +26,9 @@
 * `rejectNil()`
 * `allowNaN()`
 * `rejectNaN()`
-* `shouldCast(boolean)`
+* `shouldCast()`
+
+* `equals()`
 * `isGreaterThan(min)`
 * `isGreaterThanOrEqual(min)`
 * `isLessThan(max)`
@@ -27,7 +44,6 @@
 
 ## `isString()`
 * `defaultsTo(value)`
-* `matches(re: Regex)`
 * `isRequired()`
 * `isOptional()`
 * `allowUndefined()`
@@ -38,6 +54,9 @@
 * `rejectNil()`
 * `allowEmpty()`
 * `rejectEmpty()`
+
+* `matches()`
+* `equals()`
 * `isOneOf()`
 * `notOneOf()`
 * `hasMinLength(min)`
@@ -92,6 +111,7 @@
 * `hasMaxLength(max)`
 * `hasLengthBetween(min, max)`
 
+
 ## `isBoolean()`
 
 * `defaultsTo(value)`
@@ -103,26 +123,28 @@
 * `rejectNull()`
 * `allowNil()`
 * `rejectNil()`
+<!-- * `isTrue()` -->
+<!-- * `isTruthy()` -->
+<!-- * `isFalse()` -->
+<!-- * `isFalsy()` -->
+
+
+## `isNull()`
+## `isUndefined()`
+
+## `isTypeOf()`
+## `hasSchema()`
+
+## Extras
+
 * `isTrue()`
 * `isTruthy()`
 * `isFalse()`
 * `isFalsy()`
 
-## `isNull()`
-
-## `isUndefined()`
-
-## `isTypeOf()`
-
-## Extras
-
-*. `isPassword()`
 * `isEmail()`
 * `isIPv4()`
 * `isIPv6()`
 * `isCreditCard()`
 * `isVIN()`
 * `isABN()`
-
-kj
-

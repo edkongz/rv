@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import * as R from '../node_modules/@types/ramda/index';
 import allowNull from './allowNull';
 import allowUndefined from './allowUndefined';
 

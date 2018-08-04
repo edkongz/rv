@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import * as R from '../../node_modules/@types/ramda/index';
 import _mapDigits from '../internal/_mapDigits';
 /*################################################################
   Verhoeff algorithm
@@ -36,9 +36,11 @@ const p = [
 /*---------------------------------------------------------------
   Export
   ---------------------------------------------------------------*/
+
 export default R.pipe(
   _mapDigits,
-  R.reverse,
-  R.reduce((check, value, index) => d[check][p[index % 8][value]], 0),
+  R.reverse as any,
+  // FIXME needs index and typing
+  // R.reduce((check, value, index) => d[check][p[index % 8][value]], 0),
   R.equals(0),
 );

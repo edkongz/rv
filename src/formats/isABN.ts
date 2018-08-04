@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import * as R from '../../node_modules/@types/ramda/index';
 import _isDivisibleBy from '../internal/_isDivisibleBy';
 import _removeNonDecimaals from '../internal/_removeNonDecimals';
 
@@ -11,10 +11,10 @@ const weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
 
 const _shouldPass = R.pipe(
   _removeNonDecimaals,
-  R.map(Number),
+  R.map(Number) as any,
   R.adjust(R.dec, 0),
   R.zipWith(R.multiply, weights),
-  R.sum,
+  R.sum as any,
   _isDivisibleBy(89),
 );
 

@@ -4,7 +4,9 @@
   "description": "A functional validation library written with ramda (all hail ramda 🙌). Heavily inspired by Joi with the following features:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "rm -rf build && tsc --outDir build --module commonjs",
+    "test:watch": "nodemon --exec \"npx tape tests/**/*.js | npx faucet\"",
+    "test": "tape tests/isNumber.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/ramda": "^0.25.35",
+    "faucet": "0.0.1",
     "ramda": "^0.25.0",
     "rollup": "^0.62.0",
     "rollup-plugin-node-resolve": "^3.3.0",
