@@ -100,6 +100,8 @@ not
 has
 reject
 allow
+disallow
+forbid
 should
 
 hasShape()

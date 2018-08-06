@@ -3,36 +3,30 @@ import _isType from './internal/_isType';
 import _isNull from './internal/_isNull';
 import _isUndefined from './internal/_isUndefined';
 import { TYPES } from './internal/_definitions';
-import _buildSpec from './internal/_buildSchema';
+import _schemaFactory from './internal/_schemaFactory';
 import _isEmpty from './internal/_isEmpty';
 import _castNumber from './internal/_castNumber';
+import _isSchemaRule from './internal/_isSchemaRule';
+import _validateNil from './internal/_validateNil';
 
-const numberSpec = _buildSpec({
-  type: TYPES.NUMBER,
-  allowNull: false,
-  allowUndefined: false,
-  shouldCast: true,
-  rules: [],
-});
+const defaults = {};
+const validate = (value, specs) => {
+  let err = _validateNil(specs, value);
+  if (err) return err;
 
-/*################################################################
-  
-  ################################################################*/
-export const isNumber = (...factoryRules:any[]) => {
-  const factorySpec = numberSpec(factoryRules);
-  return (value, ...instanceRules:any[]) => {
-    const instanceSpec = _buildSpec(factorySpec, ...R.flatten(instanceRules));
+  if (specs.shouldCast) value = _castNumber(value);
 
-    if (_isNull(value)) return instanceSpec.allowNull;
-    if (_isUndefined(value)) return instanceSpec.allowUndefined;
-
-    // CAST
-    if (instanceSpec.shouldCast) value = _castNumber(value);
-    if (isNaN(value)) return false;
-
-    R.allPass(instanceSpec.rules)(value);
-  };
+  // return {
+  //   isRommel: true,
+  //   type: 'ERROR',
+  //   isValid: false,
+  //   message: 'hello',
+  //   code: 'HELLO',
+  //   value,
+  // };
 };
 
-
-export default () => ({isValid: false})
+/*---------------------------------------------------------------
+  Export
+  ---------------------------------------------------------------*/
+export default _schemaFactory(defaults, validate);

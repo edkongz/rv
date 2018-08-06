@@ -1,15 +1,18 @@
+import { IError } from "./_errorFactory";
+
 /*################################################################
-  Build error
+  Build results
   ################################################################*/
-export interface IError {
-  message: string;
-  code: string;
-  type: string;
-  path?: string; // FIXME not sure about this
-  value: any;
+export interface IResults extends IError {
+  isRommel: boolean;
+  isValid: boolean;
+  errors?: IError[];
 }
 
 /*---------------------------------------------------------------
   Export
   ---------------------------------------------------------------*/
-export default () => ({})
+export default (isValid:boolean)=> ({
+  // isRommel: true,
+  // isValid
+})

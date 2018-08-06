@@ -1,3 +1,3 @@
-import * as R from '../../node_modules/@types/ramda/index';
+import * as R from 'ramda';
 
 export default R.type;
