@@ -1,4 +1,4 @@
-import { IError } from "./_errorFactory";
+import { IError } from './_errorFactory';
 
 /*################################################################
   Build results
@@ -12,7 +12,7 @@ export interface IResults extends IError {
 /*---------------------------------------------------------------
   Export
   ---------------------------------------------------------------*/
-export default (isValid:boolean)=> ({
-  // isRommel: true,
-  // isValid
-})
+export default (isValid: boolean) => ({
+  isRommel: true,
+  isValid,
+});
