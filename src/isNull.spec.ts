@@ -6,7 +6,7 @@ describe('isNull', () => {
     [
       [undefined, 'should fail undefined'],
       [123, 'should fail numbers'],
-      ['hello', 'should fail strings'],
+      ['abc', 'should fail strings'],
       [{}, 'should fail objects'],
     ].forEach(hasInvalidResults(isNull()));
   });
