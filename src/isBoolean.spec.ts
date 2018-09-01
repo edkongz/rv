@@ -14,6 +14,7 @@ describe('isBoolean()', () => {
     Default
     ---------------------------------------------------------------*/
   describe('-default-', () => {
+    // Should be strict?
     _validTests(_isBoolean, [
       [true, 'should pass true'],
       [false, 'should pass false'],
@@ -38,14 +39,12 @@ describe('isBoolean()', () => {
 
   describe('notStrict()', () => {
     _validTests(_isBoolean, [
-      [
-        [undefined, 'should pass undefined'],
-        [null, 'should pass null'],
-        [123, 'should pass number'],
-        [1, 'should pass 1'],
-        [0, 'should pass 0'],
-        ['abc', 'should pass strings'],
-      ],
+      [undefined, 'should pass undefined'],
+      [null, 'should pass null'],
+      [123, 'should pass number'],
+      [1, 'should pass 1'],
+      [0, 'should pass 0'],
+      ['abc', 'should pass strings'],
     ]);
   });
 });

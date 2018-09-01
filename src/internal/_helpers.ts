@@ -2,14 +2,15 @@
   Jest Test helpers
   ################################################################*/
 
-const hasResults = (isValid: boolean) => fn => ([value, message]: any) =>
-  it(message, () => expect(fn(value)).toMatchObject({ isValid }));
+// const hasResults = (isValid: boolean) => fn => ([value, message]: any) =>
+//   it(message, () => expect(fn(value)).toMatchObject({ isValid }));
 
-export const _hasValidResults = hasResults(true);
-export const _hasInvalidResults = hasResults(false);
+// export const _hasValidResults = hasResults(true);
+// export const _hasInvalidResults = hasResults(false);
 
-const testResults = (fn, isValid) => ([value, message]: any) =>
+const testResults = (fn, isValid) => ([value, message]) => {
   it(message, () => expect(fn(value)).toMatchObject({ isValid }));
+};
 
 export const _validTests = (fn, values) =>
   values.forEach(testResults(fn, true));

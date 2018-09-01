@@ -1,35 +1,29 @@
 import { _validTests, _invalidTests } from './internal/_helpers';
-
-const _isNumber = () => {};
+const _isObject = () => {};
 
 /*################################################################
-  isNumber()
+  isObject()
   ################################################################*/
-describe('isNumber()', () => {
+describe('isObject()', () => {
   /*---------------------------------------------------------------
     Default
     ---------------------------------------------------------------*/
   describe('-default-', () => {
-    // strings as numbers ?
-    _validTests(_isNumber, [
-      [1, 'should pass integer'],
-      [1.23, 'should pass floating point'],
-      [Number(123), 'should pass number constructor'],
+    _validTests(_isObject, [
+      [{}, 'should pass {}'],
+      [Object(null), 'should pass Object()'],
     ]);
 
-    _invalidTests(_isNumber, [
-      [null, 'should fail null'],
+    _invalidTests(_isObject, [
       [undefined, 'should fail undefined'],
+      [null, 'should fail null'],
+      [123, 'should fail postiive numbers'],
+      [-123, 'should fail negative numbers'],
       [true, 'should fail true'],
       [false, 'should fail false'],
+      ['abc', 'should fail strings'],
       [[], 'should fail []'],
       [Array(), 'should fail Array()'],
-      [{}, 'should fail {}'],
-      [Object(), 'should fail Object()'],
     ]);
   });
-
-  /*---------------------------------------------------------------
-    Modifiers
-    ---------------------------------------------------------------*/
 });

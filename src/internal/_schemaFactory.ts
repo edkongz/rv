@@ -1,4 +1,4 @@
-import { IResults } from './_resultsFactory';
+import { IResults } from './_buildResults';
 import _isSchemaRule from './_isSchemaRule';
 
 // import * as R from '../../node_modules/@types/ramda/index';
