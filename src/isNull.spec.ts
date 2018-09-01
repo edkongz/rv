@@ -1,17 +1,21 @@
-import { hasInvalidResults, hasValidResults } from './internal/_helpers';
-import isNull from './isNull';
+import { _validTests, _invalidTests } from './internal/_helpers';
+// import isNull from './isNull';
 
-describe('isNull', () => {
-  describe('default options with invalid input', () => {
-    [
+const _isNull = () => {};
+
+/*################################################################
+  isNull()
+  ################################################################*/
+describe('isNull()', () => {
+  describe('-default-', () => {
+    _validTests(_isNull, [null, 'should pass null']);
+    _invalidTests(_isNull, [
       [undefined, 'should fail undefined'],
-      [123, 'should fail numbers'],
+      [true, 'should fail true'],
+      [false, 'should fail false'],
       ['abc', 'should fail strings'],
-      [{}, 'should fail objects'],
-    ].forEach(hasInvalidResults(isNull()));
-  });
-
-  describe('defualt options with valid input', () => {
-    [[null, 'should pass null']].forEach(hasValidResults(isNull()));
-  });
+      [new String('abc'), 'should fail string constructor'],
+      [{}, 'should fail object'],
+      [[], 'should fail arrays'],
+    ]);
 });
