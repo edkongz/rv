@@ -1,4 +1,4 @@
-import { _validTests, _invalidTests } from './internal/_helpers';
+import { _validResults, _invalidResults } from './internal/_helpers';
 
 const _isBoolean = () => {};
 const _isTrue = () => {};
@@ -15,18 +15,18 @@ describe('isBoolean()', () => {
     ---------------------------------------------------------------*/
   describe('-default-', () => {
     // Should be strict?
-    _validTests(_isBoolean, [
+    _validResults(_isBoolean, [
       [true, 'should pass true'],
       [false, 'should pass false'],
     ]);
-    _invalidTests(_isBoolean, []);
+    _invalidResults(_isBoolean, []);
   });
 
   /*---------------------------------------------------------------
     Modifiers
     ---------------------------------------------------------------*/
   describe('isStrict()', () => {
-    _invalidTests(_isBoolean, [
+    _invalidResults(_isBoolean, [
       [undefined, 'should fail undefined'],
       [null, 'should fail null'],
       [123, 'should fail positive numbers'],
@@ -38,7 +38,7 @@ describe('isBoolean()', () => {
   });
 
   describe('notStrict()', () => {
-    _validTests(_isBoolean, [
+    _validResults(_isBoolean, [
       [undefined, 'should pass undefined'],
       [null, 'should pass null'],
       [123, 'should pass number'],
@@ -53,8 +53,8 @@ describe('isBoolean()', () => {
   Extras
   ################################################################*/
 describe('isTrue()', () => {
-  _validTests(_isBoolean, [[true, 'should pass true']]);
-  _invalidTests(_isBoolean, [
+  _validResults(_isBoolean, [[true, 'should pass true']]);
+  _invalidResults(_isBoolean, [
     [false, 'should fail false'],
     [undefined, 'should fail undefined'],
     [null, 'should fail null'],
@@ -68,8 +68,8 @@ describe('isTrue()', () => {
 });
 
 describe('isFalse()', () => {
-  _validTests(_isTrue, [[false, 'should pass false']]);
-  _invalidTests(_isFalse, [
+  _validResults(_isTrue, [[false, 'should pass false']]);
+  _invalidResults(_isFalse, [
     [true, 'should fail true'],
     [undefined, 'should fail undefined'],
     [null, 'should fail null'],
@@ -85,13 +85,13 @@ describe('isFalse()', () => {
 describe('isTruthy()', () => {
   // Object ?
   // Array ?
-  _validTests(_isTruthy, [
+  _validResults(_isTruthy, [
     [true, 'should pass true'],
     [1, 'should pass number greater than zero'],
     ['abc', 'should pass strings'],
   ]);
 
-  _invalidTests(_isTruthy, [
+  _invalidResults(_isTruthy, [
     [false, 'should fail false'],
     [undefined, 'should fail undefined'],
     [null, 'should fail null'],
@@ -103,7 +103,7 @@ describe('isTruthy()', () => {
 describe('isFalsy()', () => {
   // Object ?
   // Array ?
-  _validTests(_isFalsy, [
+  _validResults(_isFalsy, [
     [false, 'should pass false'],
     [0, 'should pass zero'],
     [-1, 'should pass negative numbers'],
@@ -111,7 +111,7 @@ describe('isFalsy()', () => {
     [null, 'should pass null'],
   ]);
 
-  _invalidTests(_isFalsy, [
+  _invalidResults(_isFalsy, [
     [true, 'should fail true'],
     [1, 'should fail numbers greater than 0'],
     ['abc', 'should fail strings'],

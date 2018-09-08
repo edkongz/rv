@@ -4,7 +4,7 @@ import { IError } from './_errorFactory';
   Build results
   ################################################################*/
 export interface IResults extends IError {
-  isRommel: boolean;
+  __isRommel: boolean;
   isValid: boolean;
   errors?: IError[];
 }
@@ -13,6 +13,6 @@ export interface IResults extends IError {
   Export
   ---------------------------------------------------------------*/
 export default (isValid: boolean) => ({
-  isRommel: true,
+  __isRommel: true,
   isValid,
 });

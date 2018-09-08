@@ -1,4 +1,4 @@
-import { _validTests, _invalidTests } from './internal/_helpers';
+import { _validResults, _invalidResults } from './internal/_helpers';
 const _isObject = () => {};
 
 /*################################################################
@@ -9,12 +9,12 @@ describe('isObject()', () => {
     Default
     ---------------------------------------------------------------*/
   describe('-default-', () => {
-    _validTests(_isObject, [
+    _validResults(_isObject, [
       [{}, 'should pass {}'],
       [Object(null), 'should pass Object()'],
     ]);
 
-    _invalidTests(_isObject, [
+    _invalidResults(_isObject, [
       [undefined, 'should fail undefined'],
       [null, 'should fail null'],
       [123, 'should fail postiive numbers'],

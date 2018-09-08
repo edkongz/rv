@@ -1,4 +1,4 @@
-import { _validTests, _invalidTests } from './internal/_helpers';
+import { _validResults, _invalidResults } from './internal/_helpers';
 
 const _isNumber = () => {};
 
@@ -11,13 +11,13 @@ describe('isNumber()', () => {
     ---------------------------------------------------------------*/
   describe('-default-', () => {
     // strings as numbers ?
-    _validTests(_isNumber, [
+    _validResults(_isNumber, [
       [1, 'should pass integer'],
       [1.23, 'should pass floating point'],
       [Number(123), 'should pass number constructor'],
     ]);
 
-    _invalidTests(_isNumber, [
+    _invalidResults(_isNumber, [
       [null, 'should fail null'],
       [undefined, 'should fail undefined'],
       [true, 'should fail true'],

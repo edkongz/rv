@@ -6,6 +6,7 @@ export enum TYPES {
   UNDEFINED = 'Undefined',
   ARRAY = 'Array',
   BOOLEAN = 'Boolean',
+  FUNCTION = 'Function',
 }
 
 export interface Primitive {

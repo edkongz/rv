@@ -1,4 +1,4 @@
-import { _validTests, _invalidTests } from './internal/_helpers';
+import { _validResults, _invalidTests } from './internal/_helpers';
 import isNull from './isNull';
 
 /*################################################################
@@ -6,8 +6,7 @@ import isNull from './isNull';
   ################################################################*/
 describe('isNull()', () => {
   describe('-default-', () => {
-    _validTests(isNull, [[null, 'should pass null']]);
-    console.log(isNull(null));
+    _validResults(isNull, [[null, 'should pass null']]);
     _invalidTests(isNull, [
       [undefined, 'should fail undefined'],
       [true, 'should fail true'],

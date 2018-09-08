@@ -1,4 +1,4 @@
-import { _validTests, _invalidTests } from './internal/_helpers';
+import { _validResults, _invalidResults } from './internal/_helpers';
 
 const _isArray = () => {};
 
@@ -10,12 +10,12 @@ describe('isArray()', () => {
     Default
     ---------------------------------------------------------------*/
   describe('-default-', () => {
-    _validTests(_isArray, [
+    _validResults(_isArray, [
       [[], 'should pass []'],
       [Array(), 'should pass Array'],
     ]);
 
-    _invalidTests(_isArray, [
+    _invalidResults(_isArray, [
       [undefined, 'should fail undefined'],
       [null, 'should fail null'],
       [true, 'should fail true'],

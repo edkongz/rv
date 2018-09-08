@@ -1,3 +1,7 @@
 import _buildResults from './internal/_buildResults';
+import _isNull from './internal/_isNull';
+import shouldValidate from './internal/_shouldValidate';
 
-export default () => value => _buildResults(value === null);
+const validateNull = value => _buildResults(_isNull(value));
+
+export default shouldValidate(validateNull);

@@ -1,4 +1,4 @@
-import { _validTests, _invalidTests } from './internal/_helpers';
+import { _validResults, _invalidResults } from './internal/_helpers';
 
 const _isString = () => {};
 
@@ -7,12 +7,12 @@ const _isString = () => {};
   ################################################################*/
 describe('isString()', () => {
   describe('-default-', () => {
-    _validTests(_isString, [
+    _validResults(_isString, [
       ['abc', 'should pass strings'],
       [new String('abc'), 'should pass string constructor'],
     ]);
 
-    _invalidTests(_isString, [
+    _invalidResults(_isString, [
       [undefined, 'should fail undefined'],
       [null, 'should fail null'],
       [true, 'should fail true'],
